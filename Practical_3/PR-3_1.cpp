@@ -53,7 +53,7 @@ int main() {
     
     bubbleSort(marks1, n);
     selectionSort(marks2, n);
-    //insertionSort(marks3, n);
+    insertionSort(marks3, n);
     
     return 0;
 }
