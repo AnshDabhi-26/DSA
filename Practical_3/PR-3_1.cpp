@@ -11,6 +11,7 @@ void bubbleSort(int arr[], int n) {
             }
         }
     }
+    cout<<"Bubble sort: ";
     for (int i = 0; i < n; i++) cout << arr[i] << " ";
     cout << endl;
 }
@@ -27,6 +28,7 @@ void selectionSort(int arr[], int n) {
         arr[i] = arr[minIdx];
         arr[minIdx] = temp;
     }
+    cout<<"Selection sort: ";
     for (int i = 0; i < n; i++) cout << arr[i] << " ";
     cout << endl;
 }
@@ -41,6 +43,7 @@ void insertionSort(int arr[], int n) {
         }
         arr[j + 1] = key;
     }
+    cout<<"Insertion sort: ";
     for (int i = 0; i < n; i++) cout << arr[i] << " ";
     cout << endl;
 }
@@ -50,6 +53,8 @@ int main() {
     int marks2[] = {85, 72, 93, 64, 88};
     int marks3[] = {85, 72, 93, 64, 88};
     int n = 5;
+
+    cout<<"Given array--> 85,72,93,64,88"<<endl;
     
     bubbleSort(marks1, n);
     selectionSort(marks2, n);
