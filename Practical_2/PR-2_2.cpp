@@ -1,41 +1,50 @@
 #include <iostream>
 using namespace std;
 
-int main()
+int binarySearchIterative(int arr[], int n, int key)
 {
-    int codes[] = {101, 202, 303, 404, 505, 606, 707, 808};
-    int target = 505;
-
-    int low = 0, high = 7;
-    int result = -1;
+    int low = 0;
+    int high = n - 1;
 
     while (low <= high)
     {
-        int mid = low + (high - low) / 2;
+        int mid = (low + high) / 2;
 
-        if (codes[mid] == target)
-        {
-            result = mid;
-            break;
-        }
-        else if (codes[mid] < target)
-        {
+        if (arr[mid] == key)
+            return mid;
+
+        else if (arr[mid] < key)
             low = mid + 1;
-        }
+
         else
-        {
             high = mid - 1;
-        }
     }
+
+    return -1;
+}
+
+int main()
+{
+    int n, key;
+
+    cout << "Enter number of book codes: ";
+    cin >> n;
+
+    int arr[n];
+
+    cout << "Enter sorted book codes:\n";
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+
+    cout << "Enter target book code: ";
+    cin >> key;
+
+    int result = binarySearchIterative(arr, n, key);
 
     if (result != -1)
-    {
-        cout << "Target code found at index: " << result << endl;
-    }
+        cout << "Book code found at position: " << result + 1;
     else
-    {
-        cout << "Target code not found." << endl;
-    }
+        cout << "Book code not found.";
 
     return 0;
 }
